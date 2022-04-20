@@ -19,9 +19,9 @@
 
             <div id="name">
 
-                <h1 class="quickFade delayTwo" style='margin-left:50px;margin-top:25px'>{{name}}</h1>
+                <h1 class="quickFade delayTwo" style='margin-left:50px;margin-top:25px;'>{{name}}</h1>
                 <br>
-                <h2 class="quickFade delayThree" style='margin-left:55px'>"{{passion}}"</h2>
+                <h2 class="quickFade delayThree" style='margin-left:55px;text-shadow: 1px 1.8px  black '>"{{passion | upper}}"</h2>
 
             </div>
 
@@ -29,8 +29,8 @@
 
             <div id="contactDetails" class="quickFade delayFour">
                 <ul>
-                    <li>EMAIL : {{email}}</li>
-                    <li>Mobile : {{mobile}}</li>
+                    <li>Email-  {{email}}</li>
+                    <li>Mobile-  {{mobile}}</li>
                 </ul>
             </div>
             <div class="clear"></div>
@@ -73,7 +73,7 @@
 
                         <h2>{{edutitle}}</h2>
 
-                        <p class="subDetails">{{timeedu}} &nbsp YEARS</p>
+                        <p class="subDetails">{{timeedu}}</p>
 
                         <p>Score : {{scoreedu}}</p>
 
@@ -138,7 +138,7 @@
 
                     <ul class="keySkills">
 
-                        <li>{{skill1}}/li>
+                        <li>{{skill1}}</li>
                         <li>{{skill2}}</li>
                         <li>{{skill3}}</li>
                         <li>{{skill4}}</li>
