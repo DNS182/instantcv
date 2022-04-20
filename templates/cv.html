@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CV -FOR YOU</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+</head>
+{% comment %} enctype="multipart/form-data" {% endcomment %}
+<form method="post" > 
+    {% csrf_token %}
+<body id="top">
+    <div id="cv" class="instaFade">
+        <div class="mainDetails">
+            <div id="headshot" class="quickFade">
+                <input type="file" required="True" name='image' ><LABEL>IMAGE HERE IMAGE HERE</LABEL>
+            </div>
+
+
+
+            <div id="name">
+
+                <h1 class="quickFade delayTwo" style='margin-left:50px;margin-top:25px'><input type="text" name="name" placeholder="NAME" required="True"></h1>
+                <br>
+                <h2 class="quickFade delayThree" style='margin-left:55px'><input type="text" name= 'passion' placeholder="WHAT PASSION DEFINES YOU" required="True" style ='width:120%'>{{passion}}</h2>
+
+            </div>
+
+
+
+            <div id="contactDetails" class="quickFade delayFour">
+                <ul>
+                    <li>EMAIL : <input type="email" name="email" placeholder="EMAIL" required="True"></li>
+                    <li>Mobile : <input type="number" name="number"  placeholder="MOBILE NO" required="True"></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+
+        </div>
+
+
+        <div id="mainArea" class="quickFade delayFive">
+            <section>
+                <article>
+                    <div class="sectionTitle">
+                        <h1>Personal Address</h1>
+                    </div>
+
+
+                    <div class="sectionContent">
+                        <p><input type="text" placeholder="ADDRESS" name="address" required="True">
+                        </p>
+                    </div>
+
+                </article>
+
+                <div class="clear"></div>
+
+            </section>
+
+ <section>
+
+                <div class="sectionTitle">
+
+                    <h1 style='padding-top:20px'>Education</h1>
+
+                </div>
+
+
+
+                <div class="sectionContent">
+
+                    <article>
+
+                        <h2><input type="text" placeholder="EDUCATION TITLE" name ='edutitle' required="True"></h2>
+
+                        <p class="subDetails"><input type="number" placeholder="HOW MANY YEARS YOU STUDIED?" name="timeedu" required="True"></p>
+
+                        <p><input type="text" name="scoreedu" placeholder="SCORE ON EDUCATION" required="True"></p>
+
+                    </article>
+
+                </div>
+
+                <div class="clear"></div>
+
+            </section>
+
+
+            <section>
+
+                <div class="sectionTitle">
+
+                    <h1 style='padding-top:65px'>
+                        Work Experience
+                    </h1>
+
+                </div>
+
+
+
+                <div class="sectionContent">
+
+                    <article>
+
+                        <h2><input type="text" placeholder="EXPERIENCE TITLE" name="expti" required="True"></h2>
+                        <p class="subDetails"><input type="text" placeholder="EXPERIENCE Years" name ='expyr' required="True"></p>
+                        <p> <input type="text" placeholder="EXPERIENCE DETAILS" name="expde" required="True"></p>
+                    </article>
+
+
+
+                    <article>
+
+                        <h2><input type="text" placeholder="ADD ANOTHER EXPERIENCE TITLE" name="expti1" required="True"></h2>
+                        <p class="subDetails"><input type="text" placeholder="EXPERIENCE Years" name ='expyr1' required="True"></p>
+                        <p><input type="text" placeholder="EXPERIENCE DETAILS" name="expde1" required="True"></p>                   
+
+
+                    </article>
+
+
+                </div>
+
+                <div class="clear"></div>
+
+            </section>
+            <section>
+
+                <div class="sectionTitle">
+
+                    <h1 style='padding-top:8px'>Key Skills</h1>
+
+                </div>
+
+
+
+                <div class="sectionContent">
+
+                    <ul class="keySkills">
+
+                        <li><input type="text" name="skill1" placeholder="SKILLS!!" required="True"></li>
+                        <li><input type="text" name="skill2" placeholder="SKILLS!!" required="True"></li>
+                        <li><input type="text" name="skill3" placeholder="SKILLS!!" required="True"> </li>
+                        <li><input type="text" name="skill4" placeholder="SKILLS!!" required="True"></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="clear"></div>
+
+            </section>
+        </div>
+
+    </div>
+</section>
+<button type="submit" style="margin-left: 700px; height:30px;">LET ME MAKE MY CV MAN</button>
+</form>
+</body>
+
+</html>

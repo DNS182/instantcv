@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{name}} CV </title>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+</head>
+<body id="top">
+    <div id="cv" class="instaFade">
+        <div class="mainDetails">
+            <div id="headshot" class="quickFade">
+                <img src="{% static 'images/demi.jpg' %}" alt="{{name}}" style ='width:150px ; height:150px'/>
+            </div>
+
+
+
+            <div id="name">
+
+                <h1 class="quickFade delayTwo" style='margin-left:50px;margin-top:25px'>{{name}}</h1>
+                <br>
+                <h2 class="quickFade delayThree" style='margin-left:55px'>"{{passion}}"</h2>
+
+            </div>
+
+
+
+            <div id="contactDetails" class="quickFade delayFour">
+                <ul>
+                    <li>EMAIL : {{email}}</li>
+                    <li>Mobile : {{number}}</li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+
+        </div>
+
+
+        <div id="mainArea" class="quickFade delayFive">
+            <section>
+                <article>
+                    <div class="sectionTitle">
+                        <h1>Personal Address</h1>
+                    </div>
+
+
+                    <div class="sectionContent">
+                        <p>{{address}}
+                        </p>
+                    </div>
+
+                </article>
+
+                <div class="clear"></div>
+
+            </section>
+
+ <section>
+
+                <div class="sectionTitle">
+
+                    <h1 style='padding-top:20px'>Education</h1>
+
+                </div>
+
+
+
+                <div class="sectionContent">
+
+                    <article>
+
+                        <h2>{{edutitle}}</h2>
+
+                        <p class="subDetails">{{timeedu}} &nbsp YEARS</p>
+
+                        <p>Score : {{scoreedu}}</p>
+
+                    </article>
+
+                </div>
+
+                <div class="clear"></div>
+
+            </section>
+
+
+            <section>
+
+                <div class="sectionTitle">
+
+                    <h1 style='padding-top:65px'>
+                        Work Experience
+                    </h1>
+
+                </div>
+
+
+
+                <div class="sectionContent">
+
+                    <article>
+
+                        <h2>{{expti}}</h2>
+                        <p class="subDetails">{{expyr}}</p>
+                        <p> {{expde}}</p>
+                    </article>
+
+
+
+                    <article>
+
+                        <h2>{{expti1}}</h2>
+                        <p class="subDetails">{{expyr1}}</p>
+                        <p> {{expde1}}</p>                   
+
+
+                    </article>
+
+
+                </div>
+
+                <div class="clear"></div>
+
+            </section>
+            <section>
+
+                <div class="sectionTitle">
+
+                    <h1 style='padding-top:8px'>Key Skills</h1>
+
+                </div>
+
+
+
+                <div class="sectionContent">
+
+                    <ul class="keySkills">
+
+                        <li>{{skill1}}/li>
+                        <li>{{skill2}}</li>
+                        <li>{{skill3}}</li>
+                        <li>{{skill4}}</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="clear"></div>
+
+            </section>
+        </div>
+
+    </div>
+</section>
+
+
+</body>
+
+</html>
