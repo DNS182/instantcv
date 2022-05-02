@@ -2,24 +2,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CV -FOR YOU</title>
+    <title>182's CV-FOR YOU</title>
     <meta name="viewport" content="width=device-width" />
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
 </head>
-{% comment %} enctype="multipart/form-data" {% endcomment %}
-<form method="post" > 
+ 
+<form method="post" enctype="multipart/form-data" > 
     {% csrf_token %}
 <body id="top">
     <div id="cv" class="instaFade">
         <div class="mainDetails">
             <div id="headshot" class="quickFade">
-                <img src="{% static 'images/demi.jpg' %}" alt="{{name}}" style ='width:150px ; height:150px'/>
+                <input type="file" id="avatar"  name="avatar" accept="image/jpeg" id='upload'><img src="{% static 'images/profile.png' %}" alt="{{name}}" style ='width:150px ; height:150px'/>
+                <h4 style="color:red">ONLY JPEG</h4>
             </div>
-
-
-
             <div id="name">
 
                 <h1 class="quickFade delayTwo" style='margin-left:50px;margin-top:25px'><input type="text" name="name" placeholder="NAME" required="True"></h1>

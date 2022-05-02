@@ -1,9 +1,21 @@
 
+import base64
+import io
 from django.shortcuts import redirect, render
+from PIL import Image  
+
 
 # Create your views here.
+#using bytesio() to save temporarily to render without saving it into db to render it out
 def index(request):
     if request.method == 'POST':
+        avatar = request.FILES['avatar']
+        img = Image.open(avatar) 
+        data = io.BytesIO()
+        img.save(data, "JPEG")
+        encoded_img = base64.b64encode(data.getvalue())
+        decoded_img = encoded_img.decode('utf-8')
+        img_data = f"data:image/jpeg;base64,{decoded_img}"
         name = request.POST.get('name')
         passion = request.POST.get('passion')
         email = request.POST.get('email')
@@ -22,7 +34,7 @@ def index(request):
         skill2 = request.POST.get('skill2')
         skill3 = request.POST.get('skill3')
         skill4 = request.POST.get('skill4')
-        context = {'name':name ,"passion" : passion , "email":email ,"mobile":mobile , "address" :address ,"edutitle":edutitle ,"timeedu":timeedu,"scoreedu":scoreedu ,"expti":expti, "expyr":expyr ,"expde":expde , "expti1":expti1 , "expyr1" :expyr1 ,"expde1" : expde1 , "skill1" : skill1 , "skill2": skill2 , "skill3":skill3 , "skill4":skill4 } 
+        context = {'avatar' : img_data , 'name':name ,"passion" : passion , "email":email ,"mobile":mobile , "address" :address ,"edutitle":edutitle ,"timeedu":timeedu,"scoreedu":scoreedu ,"expti":expti, "expyr":expyr ,"expde":expde , "expti1":expti1 , "expyr1" :expyr1 ,"expde1" : expde1 , "skill1" : skill1 , "skill2": skill2 , "skill3":skill3 , "skill4":skill4 } 
         return render(request , 'ghar.html' , context )
 
     return render(request , 'cv.html' )
